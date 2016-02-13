@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-# Obiettivo: valutare come sono variati i pazienti nel tempo
-""" eseguo un AHP
-
-    Attenzione: script va eseguito in python, non in sublime!!
-                Se in sublime ottengo errore
-                                      EOFError: EOF when reading a line
-
-    posizione in /home/ca/Dropbox/Dojo Python/AHP/    
+# Goal: draw the evolution of a negotiation
+""" disegno 
+    posizione in /home/ca/Dropbox/Dojo_Python/negotiation/    
     """
 # import unittest 
 import os
@@ -14,30 +9,24 @@ import matplotlib.pyplot as plt
 import numpy as np
 # import ML
 
-class ahp():
+class stato():
 
-    def input(self, testo = "Scrivi l'input\n»"):
-        s = []
-        l = []
-        while s != '###':
-            s = []
-            s = raw_input(testo)        # ottengo una stringa s con tutti gli elementi del primo nome
-            print s
-            l.append(s)          # separatore.join(s)  separatore.join(lista)
-        return l[:-1]
-    
+    def __init__(self, nome, coppia):
+        self.nome = nome
+        self.coppia = coppia 
+
+
     def stop(self):
         raw_input("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»\n\n")
         pass
 
-    def equiparo_lunghezze(self, lista):
+    def dimensione_ok(self, ):
         """max(mylist, key=len)"""
-        a = len(max(lista, key=len))        # trovo la lunghezza del valore + lungo
-        for i in range(len(lista)):
-            # print len(lista[i]) 
-            b = a - len(lista[i])
-            lista[i] = lista[i]+ " "*b      # equiparo la lunghezza al massimo
-        return lista
+        if len(self.coppia) == 2:
+            return True
+        else:
+            return False
+
 
     def in_opz(self):
         testo = "Scrivi le diverse opzioni far cui scegliere e separale con l'invio \
