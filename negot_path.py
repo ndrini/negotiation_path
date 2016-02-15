@@ -11,7 +11,7 @@ import numpy as np
 
 class stato():
 
-    def __init__(self, nome, coppia, *commento):
+    def __init__(self, nome, coppia, commento):  # commento obbligatorio
         self.nome = nome
         # print type(self.nome)
         self.coppia = coppia 
@@ -50,21 +50,25 @@ class dinamic():
     def select_actors(self):
         lista = []
         for punto in self.punti:
-            if isinstance(punto, stato):
+            if isinstance(punto, stato):    # isinstance(obj, MyClass)
                 lista.append(punto.nome) 
-            actors = list(set(lista))
+            actors = list(set(lista))    
+        # actors = list(set([x[0] for x in self.punti if isinstance(x,stato) ]))
+        # print actors    
         return actors
 
     def state_list(self):
-        actors = self.select_actors()
-
+        # recupero una lista degli attori nella negoziazione
+        actors = self.select_actors() 
         lista_coordinate = []
         for actor in actors:
             coordinate = []
+            commenti   = []
             for punto in self.punti:
-                if punto[0]== actor:
-                    coordinate.append(punto[1])
-                    commenti.append(punto[2])
+                if isinstance(punto, stato):
+                    if punto.nome == actor:
+                        coordinate.append(punto.coppia)
+                        commenti.append(punto.comment)
             estrazione = [actor, coordinate, commenti]        
             lista_coordinate.append(estrazione)
         return lista_coordinate

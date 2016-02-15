@@ -13,12 +13,12 @@ class circa_lo_stato(unittest.TestCase):
         """valuto se uno stato - coppia di valori - 
         ha la giusta dimensione """
         
-        inizio = nepa.stato("Rocky", (30, 50))        # Rocky era impaurito e desideroso di una guida
+        inizio = nepa.stato("Rocky", (30, 50), "")        # Rocky era impaurito e desideroso di una guida
         self.assertTrue(inizio.dimensione_ok())
         # self.assertEqual(a1.giudizio_da_matrice([[1, 1, 1], [1, 1, 1], [1, 1, 1]])[2, 0], 1./3)
         # errore se input int !!!
 
-        inizio_fulanito = nepa.stato("Fulanito", (30,))        
+        inizio_fulanito = nepa.stato("Fulanito", (30,), "")        
         self.assertFalse(inizio_fulanito.dimensione_ok())
 
         inizio_fulanito = nepa.stato("Fulanito", (30,31,31,33), "troppi numeri iniziali!!")
@@ -46,7 +46,7 @@ class Circa_la_dinamica(unittest.TestCase):
         """ Are there enougt "stato" for number of fasi?"""
         punti = [nepa.stato("Mike", (90,6), "interessato solo"),
                 nepa.stato("Rocky", (20,40), "spaventato e "),
-                # "una visita inaspettata ed una proposta troppo rapida ed egoista", 
+                "una visita inaspettata ed una proposta troppo rapida ed egoista", 
                 nepa.stato("Mike", (10,6), "non trova "), 
                 nepa.stato("Mike", (90,80), "Rocky lo"),]
 
