@@ -47,14 +47,27 @@ class dinamic():
     def __init__(self, punti):
         self.punti = punti
 
-    def state_list(self):
+    def select_actors(self):
         lista = []
         for punto in self.punti:
             if isinstance(punto, stato):
                 lista.append(punto.nome) 
-        return lista
+            actors = list(set(lista))
+        return actors
 
+    def state_list(self):
+        actors = self.select_actors()
 
+        lista_coordinate = []
+        for actor in actors:
+            coordinate = []
+            for punto in self.punti:
+                if punto[0]== actor:
+                    coordinate.append(punto[1])
+                    commenti.append(punto[2])
+            estrazione = [actor, coordinate, commenti]        
+            lista_coordinate.append(estrazione)
+        return lista_coordinate
 
 # Esecuzione ========================================
 if __name__ == "__main__":
