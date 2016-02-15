@@ -73,6 +73,17 @@ class dinamic():
             lista_coordinate.append(estrazione)
         return lista_coordinate
 
+    def elenca_fasi(self):
+        # recupero una lista degli attori nella negoziazione
+        fasi = []
+        i = 1
+        for punto in self.punti:
+            if not(isinstance(punto, stato)):
+                fasi.append(str(i) + ". " + punto)
+                i += 1
+        return fasi
+
+
 # Esecuzione ========================================
 if __name__ == "__main__":
     st = stato("Mike", (90,6),

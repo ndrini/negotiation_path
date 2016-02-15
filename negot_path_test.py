@@ -38,20 +38,15 @@ class Circa_la_dinamica(unittest.TestCase):
     def tearDown(self):    
         pass # plt.close('all') # closes all the figure windows
 
-    """def test_input_leggi(self):
-        # valuto se prende casualmente un numero
-        self.assertEqual(a1.input(), ['a', 's'])"""
-
     def test_numero_di_fasi(self):
         """ Are there enougt "stato" for number of fasi?"""
         punti = [nepa.stato("Mike", (90,6), "interessato solo"),
                 nepa.stato("Rocky", (20,40), "spaventato e "),
                 "una visita inaspettata ed una proposta troppo rapida ed egoista", 
                 nepa.stato("Mike", (10,6), "non trova "), 
-                nepa.stato("Mike", (90,80), "Rocky lo"),]
-
+                nepa.stato("Mike", (90,80), "Rocky lo"),
+                "Rocky chiude la comunicazione rifugiandosi in bagno", ]
         p = nepa.dinamic(punti)        
-
         self.assertEqual( p.state_list(),
                         [ 
                             ["Mike", [(90,6), (10,6), (90,80)] ,
@@ -62,7 +57,10 @@ class Circa_la_dinamica(unittest.TestCase):
                                 ["spaventato e "]
                                 ]
                                 ])
-        # self.assertTrue(nepa.dinamic.elenca_fasi(),
+        self.assertEqual( p.elenca_fasi(),
+                        [ "1. una visita inaspettata ed una proposta troppo rapida ed egoista", 
+                          "2. Rocky chiude la comunicazione rifugiandosi in bagno", 
+                          ])
 
 
 def main():
