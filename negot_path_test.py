@@ -3,7 +3,6 @@
 import unittest 
 import os
 import numpy as np
-# import ML
 import matplotlib.pyplot as plt
 import negot_path as nepa
 
@@ -32,14 +31,8 @@ class circa_lo_stato(unittest.TestCase):
 
 class Circa_la_dinamica(unittest.TestCase):
 
-    def setUp(self):
-        pass # plt.close('all') # closes all the figure windows
-
-    def tearDown(self):    
-        pass # plt.close('all') # closes all the figure windows
-
     def test_numero_di_fasi(self):
-        """ Are there enougt "stato" for number of fasi?"""
+        """ Are there enough "stato" for number of phases?"""
         punti = [nepa.stato("Mike", (90,6), "interessato solo"),
                 nepa.stato("Rocky", (20,40), "spaventato e "),
                 "una visita inaspettata ed una proposta troppo rapida ed egoista", 
@@ -62,6 +55,16 @@ class Circa_la_dinamica(unittest.TestCase):
                           "2. Rocky chiude la comunicazione rifugiandosi in bagno", 
                           ])
 
+    def test_estrai_punti(self):
+        punti = [nepa.stato("Mike", (90,6), "interessato solo"),
+                nepa.stato("Rocky", (20,40), "spaventato e "),
+                "una visita inaspettata ed una proposta troppo rapida ed egoista", 
+                nepa.stato("Mike", (10,6), "non trova "), 
+                nepa.stato("Mike", (90,80), "Rocky lo"),
+                "Rocky chiude la comunicazione rifugiandosi in bagno", ]
+        p = nepa.dinamic(punti)        
+        self.assertEqual( p.estrai_punti()[0], ([90, 10, 90],[6, 6, 80]))
+        pass
 
 def main():
     unittest.main()

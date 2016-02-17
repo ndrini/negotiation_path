@@ -73,6 +73,14 @@ class dinamic():
             lista_coordinate.append(estrazione)
         return lista_coordinate
 
+    def estrai_punti(self):
+        atr = [ attore[1] for attore in self.state_list()]
+        print atr
+        coord_x =  [[ coppia[0] for coppia in lista] for lista in atr]
+        coord_y  = [[ coppia[1] for coppia in lista] for lista in atr]
+        coord = zip(coord_x, coord_y)
+        return coord
+
     def elenca_fasi(self):
         # recupero una lista degli attori nella negoziazione
         fasi = []
@@ -83,6 +91,23 @@ class dinamic():
                 i += 1
         return fasi
 
+    def draw_dinamic(self):
+        """ Disegna, affiancate, due liste
+        http://matplotlib.org/examples/shapes_and_collections/scatter_demo.html
+        """
+        plt.title('The negotiation dinamic in a figure')
+        plt.xlabel("Actor's sadisfaction")        #  axis {acses} (sing.); axes {acsis} (plur.)
+        plt.ylabel("Actor's cooperation")
+        
+        """plt.scatter(x, y, alpha=0.5)  # s=area
+        plt.scatter(dates,values)
+        plt.plot(dates, values)"""
+
+        # plt.xticks(index + bar_width, range(1,len(lista_1)+1))   # valori sull'asse x 
+        # plt.margins(0.1)
+        plt.plot(dates, values, '-o')
+        plt.legend()
+        plt.show()
 
 # Esecuzione ========================================
 if __name__ == "__main__":
