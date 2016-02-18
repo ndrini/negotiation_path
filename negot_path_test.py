@@ -72,6 +72,6 @@ def main():
 # Esecuzione ========================================
 if __name__ == "__main__":
     
-    print "ciao"
+    print "Ciao, inizia il test."
     main()
-    print "arrivederci"
+    print "Arrivederci."
