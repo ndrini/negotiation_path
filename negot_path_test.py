@@ -6,6 +6,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import negot_path as nepa
 
+
+class circa_la_esecuzione(unittest.TestCase):
+
+    def test_fench_files(self):
+        """ Can the program fench files from the test directory? """
+        all_files = nepa.fench_files("test")   # relative path
+        print all_files
+        self.assertTrue("file_2.txt" in all_files)
+
+
 class circa_lo_stato(unittest.TestCase):
 
     def test_giudizio_da_matrice(self):

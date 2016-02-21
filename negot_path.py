@@ -5,9 +5,18 @@
     """
 # import unittest 
 import os
+from os import path
 import matplotlib.pyplot as plt
 import numpy as np
 # import ML
+
+
+def fench_files(relative_path):   # relative path
+    here = os.path.dirname(os.path.realpath(__file__))
+    files = [f for f in os.listdir(here+"/"+relative_path) if path.isfile(f)]
+    print "trovato: ", files
+    return files
+
 
 class stato():
 
@@ -123,10 +132,15 @@ class dinamic():
 
 # Esecuzione ========================================
 if __name__ == "__main__":
+    
     st = stato("Mike", (90,6),
                "A Mike interessa ...solo la sua rivinci ta, \
                per interposta persona")
     print st
+
+    """ """
+
+
 
     Rocky = [stato("Mike", (90,6), "interessato solo a una sua rivincita"),
              stato("Rocky", (20,40), "spaventato e senza incentivi"),
