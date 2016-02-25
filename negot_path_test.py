@@ -16,6 +16,11 @@ class circa_la_esecuzione(unittest.TestCase):
         self.assertTrue("file_2.txt" in all_files)
 
 
+    def test_from_text_to_objects(self):
+        pass
+
+
+
 class circa_lo_stato(unittest.TestCase):
 
     def test_giudizio_da_matrice(self):
@@ -82,6 +87,6 @@ def main():
 # Esecuzione ========================================
 if __name__ == "__main__":
     
-    print "Ciao, \n\tinizia il test"
+    print "Ciao, \n\tlet start the test"
     main()
     print "Arrivederci"

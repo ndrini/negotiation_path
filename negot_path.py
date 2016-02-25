@@ -22,6 +22,8 @@ def fench_files(relative_path):   # relative path
     # print "trovato: ", files
     return files
 
+def from_text_to_objects():
+    pass
 
 class stato():
 
@@ -110,11 +112,23 @@ class dynamic():
         http://matplotlib.org/examples/shapes_and_collections/scatter_demo.html
         """
         coordinate_di_tutti = self.estrai_punti()
-        print coordinate_di_tutti
+        actrs = [x[0] for x in self.state_list()]
+        print coordinate_di_tutti, actrs
+        j = 0 
+        for i in coordinate_di_tutti:
+            plt.plot(i[0], i[1], '-o', label=actrs[j])
+            j+=1
+            plt.text(i[0][0], i[1][0], 'Start', style='italic',
+                 bbox={'facecolor':'red', 'alpha':0.3, 'pad':6})
+            plt.text(i[0][-1], i[1][-1], 'End', style='italic',
+                 bbox={'facecolor':'green', 'alpha':0.3, 'pad':6})
+            # http://matplotlib.org/1.3.1/users/text_intro.html
+            # http://matplotlib.org/users/annotations_guide.html
+
         plt.title('The negotiation dynamic in a figure')
         plt.xlabel("Actor's sadisfaction")        #  axis {acses} (sing.); axes {acsis} (plur.)
         plt.ylabel("Actor's cooperation")
-        
+        plt.legend(loc='upper center', shadow=True)
         value_min = -20
         value_max = 120
         axes = plt.gca()
@@ -122,17 +136,6 @@ class dynamic():
         axes.set_ylim([value_min, value_max])
         ax = plt.gca()
         ax.grid(True)
-        """plt.scatter(x, y, alpha=0.5)  # s=area
-        plt.scatter(dates,values)
-        plt.plot(dates, values)"""
-
-        # plt.xticks(index + bar_width, range(1,len(lista_1)+1))   # valori sull'asse x 
-        # plt.margins(0.1)
-
-        actors = self.state_list()[0]
-        for i in coordinate_di_tutti:
-            plt.plot(i[0], i[1], '-o', label="pippo")
-        plt.legend(loc='upper center', shadow=True)
         plt.show()
 
 # Esecuzione ========================================
