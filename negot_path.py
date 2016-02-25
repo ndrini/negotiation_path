@@ -11,10 +11,15 @@ import numpy as np
 # import ML
 
 
+# global 
+HERE = os.path.dirname(os.path.realpath(__file__))
+
 def fench_files(relative_path):   # relative path
-    here = os.path.dirname(os.path.realpath(__file__))
-    files = [f for f in os.listdir(here+"/"+relative_path) if path.isfile(f)]
-    print "trovato: ", files
+
+    # files = [f for f in os.listdir(HERE+"/"+relative_path) if path.isfile(f)]
+    files = [f for f in os.listdir(HERE+"/"+relative_path) \
+             if os.path.isfile(os.path.join(HERE +"/"+relative_path, f))]
+    # print "trovato: ", files
     return files
 
 
@@ -49,8 +54,8 @@ class stato():
             print type(self.comment)"""
         return stringa       
 
-class dinamic():
-    """ The aim is to write in almost human style the dinamic, 
+class dynamic():
+    """ The aim is to write in almost human style the dynamic, 
         by join the states and the phases in a list,
         and then have the plot and the list by character """
     def __init__(self, punti):
@@ -100,13 +105,13 @@ class dinamic():
                 i += 1
         return fasi
 
-    def draw_dinamic(self):
+    def draw_dynamic(self):
         """ Disegna, affiancate, due liste
         http://matplotlib.org/examples/shapes_and_collections/scatter_demo.html
         """
         coordinate_di_tutti = self.estrai_punti()
         print coordinate_di_tutti
-        plt.title('The negotiation dinamic in a figure')
+        plt.title('The negotiation dynamic in a figure')
         plt.xlabel("Actor's sadisfaction")        #  axis {acses} (sing.); axes {acsis} (plur.)
         plt.ylabel("Actor's cooperation")
         
@@ -133,14 +138,21 @@ class dinamic():
 # Esecuzione ========================================
 if __name__ == "__main__":
     
+    """for case in fench_files("dynamics"):
+        with open(  HERE+"/dynamics/"+ case, 'r') as data:
+            data_list = [line for line in data.readlines()]  
+            
+            print data_list
+            dinamica = dynamic(data_list)
+            dinamica.draw_dynamic()
+    """
+
     st = stato("Mike", (90,6),
                "A Mike interessa ...solo la sua rivinci ta, \
                per interposta persona")
     print st
 
-    """ """
-
-
+     
 
     Rocky = [stato("Mike", (90,6), "interessato solo a una sua rivincita"),
              stato("Rocky", (20,40), "spaventato e senza incentivi"),
@@ -155,6 +167,6 @@ if __name__ == "__main__":
              stato("Adriana", (90,80), "she's happy abour the coach"), 
                ]
     
-    n_Rocky = dinamic(Rocky)
+    n_Rocky = dynamic(Rocky)
     
-    n_Rocky.draw_dinamic()           
+    n_Rocky.draw_dynamic()           

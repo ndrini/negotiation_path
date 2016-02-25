@@ -1,0 +1,7 @@
+description 1
+stato("Actor_1", (10,5), "interessato solo"),
+stato("Rocky", (20,40), "spaventato e "),
+                "una visita inaspettata ed una proposta troppo rapida ed egoista", 
+                nepa.stato("Mike", (10,6), "non trova "), 
+                nepa.stato("Mike", (90,80), "Rocky lo"),
+                "Rocky chiude la comunicazione rifugiandosi in bagno" 

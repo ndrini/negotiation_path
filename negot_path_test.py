@@ -12,7 +12,7 @@ class circa_la_esecuzione(unittest.TestCase):
     def test_fench_files(self):
         """ Can the program fench files from the test directory? """
         all_files = nepa.fench_files("test")   # relative path
-        print all_files
+        # print all_files
         self.assertTrue("file_2.txt" in all_files)
 
 
@@ -49,7 +49,7 @@ class Circa_la_dinamica(unittest.TestCase):
                 nepa.stato("Mike", (10,6), "non trova "), 
                 nepa.stato("Mike", (90,80), "Rocky lo"),
                 "Rocky chiude la comunicazione rifugiandosi in bagno", ]
-        p = nepa.dinamic(punti)        
+        p = nepa.dynamic(punti)        
         self.assertEqual( p.state_list(),
                         [ 
                             ["Mike", [(90,6), (10,6), (90,80)] ,
@@ -72,7 +72,7 @@ class Circa_la_dinamica(unittest.TestCase):
                 nepa.stato("Mike", (10,6), "non trova "), 
                 nepa.stato("Mike", (90,80), "Rocky lo"),
                 "Rocky chiude la comunicazione rifugiandosi in bagno", ]
-        p = nepa.dinamic(punti)        
+        p = nepa.dynamic(punti)        
         self.assertEqual( p.estrai_punti()[0], ([90, 10, 90],[6, 6, 80]))
         pass
 
@@ -82,6 +82,6 @@ def main():
 # Esecuzione ========================================
 if __name__ == "__main__":
     
-    print "Ciao, inizia il test."
+    print "Ciao, \n\tinizia il test"
     main()
-    print "Arrivederci."
+    print "Arrivederci"
