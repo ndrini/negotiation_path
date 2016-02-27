@@ -1,18 +1,8 @@
-"expectations before negotiation occours"
-stato("Jerry", (60,80), "Got a big offert and restart his activity: the aceptation of Rod is his goal"),
-stato("Dorothy", (90,100), "Got a big offert and start her relation with a winner man"),
-stato("Rod", (90,100), "Finnaly, he feels someone appreciate his value by giving him a lot of money (3 M$ in tree years)",
-stato("Marcee", (80,80), "Pressure the agent Jerry to get a lot a money"),
-"1:28:07 the four (Jerry Maguire, Dorothy Boyd, Rod Tidwell, Marcee Tidwell) are waiting for the offert fax)",
-
-stato("Jerry", (30,40), "Scared, Jerry want to save the possibility of an incame for him, also low rate incame"),
-stato("Marcee", (20,50), "Marcee feels extremaly insatisfact: Jerry did't work as he should"),
-stato("Adriana", (80,80), "she is not aware of the negotiation"),
-"una visita inaspettata ed una proposta troppo rapida ed egoista", 
-stato("Rocky", (10,20), "Rocky di chiude in se stesso e nel bagno"),
-stato("Mike", (10,6), "non trova il modo di dialogo"), 
-"Parole in libertá", 
-stato("Mike", (90,80), "Rocky lo accetta"),
-stato("Rocky", (70,70), "Rocky di chiude in sè stesso e nel bagno"), 
-"",
-stato("Adriana", (90,80), "she's happy abour the coach"), 
+Expectations before that negotiation occours
+- "Jerry", (60,80), "Got a big offert and restart his activity: the aceptation of Rod is his goal"
+- "Dorothy", (90,100), "Got a big offert and start her relation with a winner man"
+- "Rod", (90,100), "Finnaly, he feels someone appreciate his value by giving him a lot of money (3 M$ in tree years)"
+- "Marcee", (80,80), "Pressure the agent Jerry to get a lot a money"),
+time: 01:28:07 the four (Jerry Maguire, Dorothy Boyd, Rod Tidwell, Marcee Tidwell) are waiting for the offert fax)
+- "Jerry", (30,40), "Scared, Jerry want to save the possibility of an incame for him, also low rate incame"
+- "Marcee", (20,50), "Marcee feels extremaly insatisfact: Jerry did't work as he should"

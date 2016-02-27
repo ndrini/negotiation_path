@@ -27,26 +27,18 @@ def from_text_to_objects(lista):
     content = []
     for i in lista:     # ex. stato("Actor A", (10,10), "caption a") 
         # print i[:7]
-        """
-        if i[:7] == 'stato("': 
+        if i[:3] == '- "': 
             print "» tranform text in a object due from_text_to_objects"
             print i #str(i) 
-            parts = i.split(",")
+            #  i = '- "Actor A", (10,10), "caption a"'
+            parts = i.split('"')
             # parts[1] have to be a tupla of integer, not a str
-            no_brack = parts[1].strip("() ")
+            no_brack = parts[2].strip("() ,")
             coords = tuple( [int(x) for x in no_brack.split(",")]  )
-            content.append(stato(parts[6:-1], coords, parts[1][:-1]) )
+            content.append(stato(parts[1], coords, parts[3][:-1]) )
         else:
             content.append(i)
-    # print content
-           """
-    # content = [["pippo"], "Actor A: satisfaction"]   
-    # content = [["pippo"], stato("Actor A", (10,10), "caption a")]
-    
-    # parts[1] have to be a tupla of integer, not a str
-    
-    i = '- "Actor A", (10,10), "caption a"'
-
+    """ i = '- "Actor A", (10,10), "caption a"'
     parts = i.split('"') 
     # parts = ['"stato("Actor A"', '(10,10)', '"caption a"']
     # parts[1]
@@ -56,7 +48,8 @@ def from_text_to_objects(lista):
     coords = tuple( [int(x) for x in no_brack.split(",")]  )
     # coords = tuple( [int(10), int(10)]) 
     content = [["pippo"], stato("Actor A", coords, "caption a")]
-
+    """
+    print [str(i) for i in content]
     return content  # 
 
 class stato():
@@ -173,40 +166,13 @@ class dynamic():
 # Esecuzione ========================================
 if __name__ == "__main__":
     
-    passo = ["Movie: 'Romeo & Giulietta'",
-             'stato("Romeo", ( 3 , 33 ), "Their love ...")',]
-
-
-    from_text_to_objects(passo)
-    
-    """for case in fench_files("dynamics"):
+    for case in fench_files("dynamics"):
+        print case
         with open(  HERE+"/dynamics/"+ case, 'r') as data:
             data_list = [line for line in data.readlines()]  
             
             print data_list
-            dinamica = dynamic(data_list)
+            data_list_with_objects = from_text_to_objects(data_list)
+            print data_list_with_objects
+            dinamica = dynamic(data_list_with_objects)
             dinamica.draw_dynamic()
-    """
-
-    st = stato("Mike", (90,6),
-               "A Mike interessa ...solo la sua rivincita, \
-               per interposta persona")
-    print st
-
-
-    Rocky = [stato("Mike", (90,6), "interessato solo a una sua rivincita"),
-             stato("Rocky", (20,40), "spaventato e senza incentivi"),
-             stato("Adriana", (80,80), "she is not aware of the negotiation"),
-             "una visita inaspettata ed una proposta troppo rapida ed egoista", 
-             stato("Rocky", (10,20), "Rocky di chiude in se stesso e nel bagno"),
-             stato("Mike", (10,6), "non trova il modo di dialogo"), 
-             "Parole in libertá", 
-             stato("Mike", (90,77), "Rocky lo accetta"),
-             stato("Rocky", (70,70), "Rocky di chiude in sè stesso e nel bagno"), 
-             "",
-             stato("Adriana", (90,88), "she's happy about the coach"), 
-               ]
-    
-    n_Rocky = dynamic(Rocky)
-    
-    n_Rocky.draw_dynamic()           
