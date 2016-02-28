@@ -22,15 +22,8 @@ class circa_la_esecuzione(unittest.TestCase):
         """ Can the program transform a text description to an objects? """
         with open(  HERE+"/test/file_3.txt", 'r') as testo:
             row = [line for line in testo.readlines()]  
-            # print row[1]              # remove
-            # print type(row)           # remove
-            # print type(row[0])        # remove
-            # print "passo a negot_path.py"  # remove
         item_list = nepa.from_text_to_objects(row)  
-        # stato("Actor A", (10,10), "caption a")
         self.assertEqual(str(item_list[1])[0:21], "Actor A: satisfaction")
-        
-
 
 class circa_lo_stato(unittest.TestCase):
 
@@ -100,4 +93,4 @@ if __name__ == "__main__":
     
     print "Ciao, \n\tlet start the tests!"
     main()
-    print "Arrivederci"
+

@@ -6,3 +6,28 @@ Expectations before that negotiation occours
 time: 01:28:07 the four (Jerry Maguire, Dorothy Boyd, Rod Tidwell, Marcee Tidwell) are waiting for the offert fax)
 - "Jerry", (30,40), "Scared, Jerry want to save the possibility of an incame for him, also low rate incame"
 - "Marcee", (20,50), "Marcee feels extremaly insatisfact: Jerry did't work as he should"
+- "Rod", (20,90), "Rod feels frustrated in his expectations"
+Marcee threats to find another agent
+- "Marcee", (20,60), "Marcee threats openly Jerry to force him to find a solution"
+- "Jerry", (30,40), "Jerry is more scared the before because he can't figure out how to reacht"
+- "Rod", (10,90), "Rod feels that his wife behaviour complicate the situation."
+- "Dorothy", (60,80), "By devalueting Jerry's job, Marcee devaluetin Dorothy too. Dorothy reachts by an appeal to a superior rule: the morals. 'Jerry is broke, and is working for you for free. The document Jerry wrote will show you his moral strength'"
+Everybody lose their initial strategy, because of the new element the negotiation showed.
+- "Jerry", (35,50), "Jerry tries, gently, to contain Dorothy iniciatives"
+- "Rod", (5,95), "Rod needs a solution from his agent, Jerry"
+- "Marcee", (10,70), "Marcee wanna retake the control of Rod, that loosed his mind."
+No deal.
+- "Marcee", (10,70), "Marcee infonded in Rod proud and confidence "
+- "Rod", (75, 95), "Rod had his solution, but not from his agent, Jerry"
+- "Jerry", (25,50), "Jerry tries, eventually, to scare Rod, but it didn't work"
+Better, an imposed deal.
+- "Rod", (75, 95), "Rod (really Marcee) closed the negotiation with no money for Jerry"
+- "Jerry", (20,60), "Jerry accept due lack of alternatives"
+Time: 01:31:31
+
+
+
+
+
+
+

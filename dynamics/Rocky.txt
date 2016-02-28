@@ -1,0 +1,11 @@
+- "Mike", (90,6), "interessato solo a una sua rivincita"
+- "Rocky", (20,40), "spaventato e senza incentivi"
+- "Adriana", (80,80), "she is not aware of the negotiation"
+Una visita inaspettata ed una proposta troppo rapida ed egoista 
+- "Rocky", (10,20), "Rocky di chiude in se stesso e nel bagno"
+- "Mike", (10,6), "non trova il modo di dialogo" 
+Parole in libertá 
+- "Mike", (90,77), "Rocky lo accetta"
+- "Rocky", (70,70), "Rocky di chiude in sè stesso e nel bagno" 
+""
+- "Adriana", (90,88), "she's happy about the coach"

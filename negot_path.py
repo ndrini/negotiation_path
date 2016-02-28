@@ -28,8 +28,8 @@ def from_text_to_objects(lista):
     for i in lista:     # ex. stato("Actor A", (10,10), "caption a") 
         # print i[:7]
         if i[:3] == '- "': 
-            print "» tranform text in a object due from_text_to_objects"
-            print i #str(i) 
+            # print "» tranform text in a object due from_text_to_objects"
+            # print i #str(i) 
             #  i = '- "Actor A", (10,10), "caption a"'
             parts = i.split('"')
             # parts[1] have to be a tupla of integer, not a str
@@ -38,18 +38,7 @@ def from_text_to_objects(lista):
             content.append(stato(parts[1], coords, parts[3][:-1]) )
         else:
             content.append(i)
-    """ i = '- "Actor A", (10,10), "caption a"'
-    parts = i.split('"') 
-    # parts = ['"stato("Actor A"', '(10,10)', '"caption a"']
-    # parts[1]
-    parts_one = parts[2]
-    # parts_one = " ( 10 , 10 )"
-    no_brack = parts_one.strip("() ,")
-    coords = tuple( [int(x) for x in no_brack.split(",")]  )
-    # coords = tuple( [int(10), int(10)]) 
-    content = [["pippo"], stato("Actor A", coords, "caption a")]
-    """
-    print [str(i) for i in content]
+    # print [str(i) for i in content]
     return content  # 
 
 class stato():
@@ -161,6 +150,18 @@ class dynamic():
         axes.set_ylim([value_min, value_max])
         ax = plt.gca()
         ax.grid(True)
+        plt.text( 25, 25, 'Retire', style='italic',
+                 bbox={'facecolor':'yellow', 'alpha':0.1, 'pad':8})
+        plt.text( 75, 25, 'Force', style='italic',
+                 bbox={'facecolor':'yellow', 'alpha':0.1, 'pad':8})
+        plt.text( 25, 75, 'Surrend', style='italic',
+                 bbox={'facecolor':'yellow', 'alpha':0.1, 'pad':8})
+        plt.text( 75, 75, 'Negotiate', style='italic',
+                 bbox={'facecolor':'yellow', 'alpha':0.1, 'pad':8})
+        plt.text( 50, 50, 'Mediate', style='italic',
+                 bbox={'facecolor':'yellow', 'alpha':0.1, 'pad':8})
+        
+
         plt.show()
 
 # Esecuzione ========================================
